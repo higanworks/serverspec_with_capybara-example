@@ -1,5 +1,9 @@
 require 'spec_helper'
 
+describe command('openssl version') do
+  it { should return_stdout /^OpenSSL\ 1\.0\.1g/ }
+end
+
 describe 'visit Heartbleed test' ,:type => :feature do
 
   before :each do
